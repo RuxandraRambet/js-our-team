@@ -34,4 +34,14 @@ const members = [
         picture: "barbara-ramos-graphic-designer.jpg"
     }
 ];
-console.log(members);
+
+// Stampa in console le info di ogni membro del team
+for(let i = 0; i < members.length; i++){
+    const member = members[i];
+    // console.log(member);
+
+    for(let key in member){
+        console.log(`${key}: ${member[key]}`);
+    }
+    console.log('');
+}
