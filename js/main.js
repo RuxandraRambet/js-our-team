@@ -45,3 +45,17 @@ for(let i = 0; i < members.length; i++){
     }
     console.log('');
 }
+
+// Stampa le stesse info su DOM
+const teamMembers = document.querySelector('.team-members');
+for(let i = 0; i < members.length; i++){
+    const member = members[i];
+    const teamMembersList = document.createElement('ul');
+
+    for(let key in member){
+        const teamMemberElement = document.createElement('li');
+        teamMemberElement.textContent = `${key}: ${member[key]}`;
+        teamMembersList.append(teamMemberElement);
+    }
+    teamMembers.append(teamMembersList);
+}
