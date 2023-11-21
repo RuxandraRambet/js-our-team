@@ -6,32 +6,32 @@ const members = [
     {
         name: "Wayne Barnett",
         role: "Founder & CEO",
-        picture: "wayne-barnett-founder-ceo.jpg"
+        picture: "img/wayne-barnett-founder-ceo.jpg"
     },
     {
         name: "Angela Caroll",
         role: "Chief Editor",
-        picture: "angela-caroll-chief-editor.jpg"   
+        picture: "img/angela-caroll-chief-editor.jpg"   
     },
     {
         name: "Walter Gordon",
         role: "Officer Manager",
-        picture: "walter-gordon-office-manager.jpg"
+        picture: "img/walter-gordon-office-manager.jpg"
     },
     {
         name: "Angela Lopez",
         role: "Social Media Manager",
-        picture: "angela-lopez-social-media-manager.jpg"
+        picture: "img/angela-lopez-social-media-manager.jpg"
     },
     {
         name: "Scott Estrada",
         role: "Developer",
-        picture: "scott-estrada-developer.jpg"
+        picture: "img/scott-estrada-developer.jpg"
     },
     {
         name: "Barbara Ramos",
         role: "Graphic Designer",
-        picture: "barbara-ramos-graphic-designer.jpg"
+        picture: "img/barbara-ramos-graphic-designer.jpg"
     }
 ];
 
@@ -53,9 +53,20 @@ for(let i = 0; i < members.length; i++){
     const teamMembersList = document.createElement('ul');
 
     for(let key in member){
-        const teamMemberElement = document.createElement('li');
-        teamMemberElement.textContent = `${key}: ${member[key]}`;
-        teamMembersList.append(teamMemberElement);
+        // const teamMemberElement = document.createElement('li');
+        // teamMemberElement.textContent = `${key}: ${member[key]}`;
+        // teamMembersList.append(teamMemberElement);
+
+        // Se nome/ruolo crea stringa, altrimenti inserisco la stringa nella src di un elemento img
+        if(key != "picture"){
+            const teamMemberElement = document.createElement('li');
+            teamMemberElement.textContent = `${key}: ${member[key]}`;
+            teamMembersList.append(teamMemberElement);
+        }else{
+            const teamMemberImg = document.createElement('img');
+            teamMemberImg.src = member[key];
+            teamMembersList.append(teamMemberImg);
+        }
     }
     teamMembers.append(teamMembersList);
 }
